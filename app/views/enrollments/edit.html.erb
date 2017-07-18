@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="large-12 columns step-1">
+        <div>
+        <h1>New Enrollment</h1>
+      </div>
+      <%@enrollment = Enrollment.last%>
+        <%= form_for(@enrollment, :url => {:action => 'update', :id => @enrollment.id}) do |f| %>
+        <div>
+  <%= f.label :therapist_name, placeholder: "Therapist" %>
+
+          <%= f.collection_select :therapist_name, Therapist.all,  :name, :name%><br/>
+            <%="Date: " + @enrollment.date%><br/><br/>
+
+
+        </div>
+        <div>
+              <%= f.fields_for :enrollment_students do |builder| %>
+              <%= render "students_fields", f: builder%>
+
+            <% end %>
+      </div>
+        <%= f.submit "Complete Enrollment", class: "btn btn-success"  %>
+
+
+
+        <% end %>
+
+    </div>
+</div>

@@ -1,0 +1,595 @@
+@charset 'utf-8';
+@import 'settings';
+@import 'foundation';
+// If you'd like to include motion-ui the foundation-rails gem comes prepackaged with it, uncomment the 3 @imports, if you are not using the gem you need to install the motion-ui sass package.
+//
+// @import 'motion-ui/motion-ui';
+// We include everything by default.  To slim your CSS, remove components you don't use.
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-close-button;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+// If you'd like to include motion-ui the foundation-rails gem comes prepackaged with it, uncomment the 3 @imports, if you are not using the gem you need to install the motion-ui sass package.
+//
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
+@import 'colors';
+@import 'font-awesome';
+@import "font-awesome-sprockets"; /*/
+////// SITEWIDE //////*/
+
+
+.test01{
+  max-width: 150px;
+	display: inline;
+}
+
+.body{
+	background:$white;
+}
+.row{
+	padding-bottom:3em;
+}
+th {
+  color: $blue;
+  font-weight: bold;
+  font-size: 15px;}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $blue;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 31px;
+}
+
+a,
+a.link {
+    color: #0059E3;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 19px;
+}
+
+label {
+    font-size: 20px;
+}
+
+.callout.secondary {
+    background: $blue;
+
+    h2 {
+        color: $yellow;
+        text-align: center;
+        line-height: 1.2;
+        font-size: 2.1rem;
+    }
+		h3 {
+        color: $yellow;
+        text-align: center;
+        line-height: 1.2;
+        font-size: 1.4rem;
+    }
+}
+
+.button.success {
+    background: $green;
+    color: $white;
+}
+
+a.button.success {
+    color: $white;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.footer {
+    background: $yellow;
+    height: auto;
+    padding: 30px;
+    width: 100%;
+    display: block;
+    float: left;
+    margin-top: 2em;
+
+    a {
+        color: $blue;
+        margin: 0 1em;
+    }
+    @media all and (max-width:580px) {
+        a {
+            display: block;
+            line-height: 2.2;
+            font-size:20px;
+            font-weight:bold;
+        }
+    }
+}
+
+.center_cell{
+	text-align:center;
+}
+
+
+[type='color'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='email'],
+[type='month'],
+[type='number'],
+[type='password'],
+[type='search'],
+[type='tel'],
+[type='text'],
+[type='time'],
+[type='url'],
+[type='week'],
+select,
+textarea {
+    max-width: 300px;
+}
+
+.hidden {
+    display: none;
+}
+
+.callout.alert {
+    color: $red;
+    font-size: 21px;
+    height: auto;
+    float: left;
+    display: block;
+}
+.accordion-title{
+    font-size:18px;
+    color:$blue;
+
+}
+.reveal.large{
+	max-width: 54rem;
+}
+/*/
+/////// HEADER SECTION //////*/
+
+.header {
+    background: $yellow;
+    height: auto;
+    float: left;
+    display: block;
+    padding: 20px;
+    width: 100%;
+        i.fa.fa-user{
+            color:$blue;
+            font-size:25px;
+        }
+}
+@media all and (max-width:768px) {
+    .header {
+        float: left;
+        height: auto;
+    }
+}
+
+.user-login {
+    float: right;
+    font-size: 18px;
+    width: 100%;
+    text-align: right;
+
+    a {
+        color: $blue;
+        font-weight:bold;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+}
+@media all and (max-width:768px) {
+    .user-login {
+        font-size: 16px;
+    }
+}
+@media all and (max-width:580px){
+    .user-login{
+        a{
+            font-size:13px;
+        }
+    }
+}
+ul.menu {
+    display: inline;
+    float: right;
+
+    a {
+        color: $blue;
+        font-size: 24px;
+        font-weight:bold;
+    }
+}
+
+.menu > li > a {
+    padding: inherit 2em;
+}
+@media all and (max-width:580px) {
+    ul.menu {
+        a {
+            font-size: 17px;
+        }
+    }
+}
+
+.logo {
+	// padding: 30px;
+}
+
+.logo a {
+	-o-transition: -o-transform ease-out 0.1s, background 0.2s;
+	-ms-transition: -ms-transform ease-out 0.1s, background 0.2s;
+	-webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
+	transition: transform ease-out 0.1s, background 0.2s;
+	display: inline-block;
+	z-index: 1;
+}
+
+.logo a:hover {
+	background: rgba(255,255,255,0.05);
+	-o-transform: scale(0.93);
+	-webkit-transform: scale(0.93);
+	-ms-transform: scale(0.93);
+	transform: scale(0.93);
+}
+
+/*/
+///////// SPLASH PAGE ///////*/
+
+.hp-splash {
+    padding-top: 3em;
+
+    h1 {
+        text-align: center;
+    }
+}
+
+.hp-sidebar {
+    padding-top: 3em;
+
+    .hp-sidebar-message {
+        color: $white;
+        font-size: 30px;
+        text-align: center;
+        line-height: 1.2;
+        margin: 10px 0;
+    }
+
+    .button {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .hp-signup-btn {
+        text-align: center;
+    }
+}
+
+.hp-video-box {
+    height: auto;
+    background: #F2F2F2;
+    margin: 1em 0;
+    width: 100%;
+    display: block;
+    float: left;
+    padding: 1em;
+
+    h3 {
+        font-size: 21px;
+        text-align: center;
+    }
+
+    .vid-media {
+        background: $black;
+        height: 100px;
+    }
+}
+/*/
+///////// SIGNUP PAGE /////*/
+
+.signup {
+    margin-top: 3em;
+
+    .button.success {
+        width: 250px;
+    }
+
+    label:after {
+        content: "*";
+        color: $red;
+    }
+}
+/*/
+///////// LOGIN PAGE /////*/
+
+.login {
+    margin-top: 3em;
+
+    .button.success {
+        width: 250px;
+    }
+
+    label:after {
+        content: "*";
+        color: $red;
+    }
+}
+/*/
+///////// HOW IT WORKS; ///////*/
+
+.how_it_works {
+    padding-top: 3em;
+
+    h1 {
+        text-align: center;
+    }
+}
+/*/
+/////// STEP 1 /////*/
+
+.edit-friends,
+.forgot,
+.messages_list,
+.resend,
+.signin,
+.step-1,
+.step-2,
+.step-3,
+.edit_user,
+.about,
+.faq,
+.how-it-works {
+    padding-top: 3em;
+
+    .button.success {
+        min-width: 250px;
+    }
+
+    label.glyphicon:after {
+        content: "*";
+        color: $red;
+    }
+}
+
+.step {
+    background: $blue;
+    border-radius: 100%;
+    font-size: 28px;
+    font-weight: bold;
+    color: $white;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    line-height: 1;
+    padding-top: 15px;
+    float: left;
+    margin-right: 1em;
+
+    span {
+        font-weight: normal;
+        font-size: 22px;
+    }
+}
+
+.step-instructions {
+    font-size: 24px;
+    color: $blue;
+}
+
+.current_step,
+.edit-friends {
+    width: 100%;
+    float: left;
+    margin-bottom: 1em;
+
+    h1 {
+        padding-top: 23px;
+        margin-left: 1em;
+    }
+    @media all and (max-width:580px){
+        h1{
+            font-size:18px;
+        }
+    }
+}
+/*/
+///////// FRIENDS PAGE //////*/
+
+.friends {
+    @media all and (min-width:940px) {
+        table {
+            max-width: 500px;
+        }
+    }
+		p{
+			font-size: 16px;
+			color: $red;
+		}
+		h5{
+			font-size: 18px;
+			color: black;
+			text-decoration: none;
+		}
+}
+
+.ff-sidebar {
+    padding-top: 8em;
+
+    .ff-sidebar-message {
+        color: $white;
+        font-size: 22px;
+        text-align: center;
+        line-height: 1.2;
+        margin: 10px 0;
+    }
+
+    .button {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .hp-signup-btn {
+        text-align: center;
+    }
+}
+/*/
+////// EDIT FRIENDS /////*/
+
+.edit-friends {
+    margin-top: 3em;
+
+    label.glyphicon:after {}
+}
+
+.edit-friends-actions a {
+    margin-right: 2em;
+}
+
+.callout.success.senators {
+    clear: both;
+}
+
+.callout.success.senators {
+    background: $blue;
+
+    h3,
+    h5 {
+        color: $white;
+    }
+}
+
+.cta {
+    background: $yellow;
+}
+
+h4.cta {
+    padding: 10px 5px;
+}
+/*/
+////////// STEP 2 ////////////*/
+
+.step-2 {
+    p,
+		h5,
+		h3 {
+				line-height: 90%;
+		}
+
+
+}
+
+/*/
+////////// STEP 3 ////////////*/
+
+.step-3 {
+    padding-top: 3em;
+
+    p:after {
+        content: "*";
+        color: $red;
+    }
+
+}
+
+.text-or-email {
+    label {
+        display: inline;
+        min-width: 80px;
+    }
+}
+/*/
+////////// NEW MESSAGE ////////////*/
+.new_message,
+.edit_message {
+  padding-top: 3em;
+
+  .button.success {
+      min-width: 250px;
+  }
+
+  label.glyphicon:after {
+      content: "*";
+      color: $red;
+  };
+  .wide_text{
+    max-width: 700px;
+  }
+}
+
+/*/
+////////// PRIVACY ////////////*/
+.privacy,
+.terms{
+	h1 {
+		font-size: 35px;
+		font-weight: bold;
+		color: $black;
+	}
+	h2{
+		font-size: 15px;
+		font-weight: bold;
+		color: $black;
+		line-height: 1;
+		margin-bottom: 0;
+	}
+	h5{
+		font-size: 15px;
+		color: $black;
+		font-weight: normal;
+		padding-bottom: 5px;
+
+	}
+	li{
+		margin: 5px 0;
+	}
+}
