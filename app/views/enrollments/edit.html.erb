@@ -6,8 +6,7 @@
       <%@enrollment = Enrollment.last%>
         <%= form_for(@enrollment, :url => {:action => 'update', :id => @enrollment.id}) do |f| %>
         <div>
-  <%= f.label :therapist_name, placeholder: "Therapist" %>
-
+          <%= f.label :therapist_name, placeholder: "Therapist" %>
           <%= f.collection_select :therapist_name, Therapist.all,  :name, :name%><br/>
             <%="Date: " + @enrollment.date%><br/><br/>
 
@@ -19,11 +18,13 @@
 
             <% end %>
       </div>
-        <%= f.submit "Complete Enrollment", class: "btn btn-success"  %>
+        <%= f.submit "Complete Enrollment", class: "button success"  %>
+  <%= link_to "Cancel Enrollment", destroy_enrollment_path(@enrollment), method: :delete, class: "button success" %>
 
 
 
         <% end %>
+
 
     </div>
 </div>

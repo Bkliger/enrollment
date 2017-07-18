@@ -4,11 +4,16 @@ Therapist.destroy_all
 Enrollment.destroy_all
 
 
-stu1 = Student.create(first_name: "Andy", last_name: "Martin", student_num: "312308")
-stu2 = Student.create(first_name: "Jane", last_name: "Johnson", student_num: "318599")
-stu3 = Student.create(first_name: "Bob", last_name: "Carver", student_num: "336950")
-ther1 = Therapist.create(name: "greg ollano")
-ther1 = Therapist.create(name: "martin morris")
-# en1 = Enrollment.create(therapist_name: "greg ollano", date: "03/04/2017")
-# EnrollmentStudent.create(enrollment_id: en1.id, student_id: stu1.id)
-# EnrollmentStudent.create(enrollment_id: en1.id, student_id: stu2.id)
+stu1 = Student.create(first_name: "Razi", last_name: "Corne", student_num: "378288")
+stu2 = Student.create(first_name: "Angela", last_name: "Espinoza", student_num: "312309")
+stu3 = Student.create(first_name: "Delia", last_name: "Espinoza", student_num: "312308")
+stu4 = Student.create(first_name: "Galilea", last_name: "Espinoza", student_num: "326612")
+stu5 = Student.create(first_name: "Malia", last_name: "Kobayashi", student_num: "316012")
+stu6 = Student.create(first_name: "Elias", last_name: "Lehman", student_num: "322422")
+stu7 = Student.create(first_name: "Ian", last_name: "McCue", student_num: "318599")
+stu8 = Student.create(first_name: "Hope Ilana", last_name: "Rodas", student_num: "336950")
+
+ther1 = Therapist.create(name: "Greg Ollano")
+ther2 = Therapist.create(name: "Martin Morris")
+ther3 = Therapist.create(name: "George Alexander")
+ther4 = Therapist.create(name: "Dylan Ballard")

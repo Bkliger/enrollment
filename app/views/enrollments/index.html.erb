@@ -1,24 +1,25 @@
 <div class="row">
     <div class="large-12 columns">
         <div id="enrollments-index" class="large-8 columns">
+            <h1>Enrollments</h1>
             <table>
                 <thead>
                     <tr>
-                        <th width:"100">Surveys</th>
+                        <th width:"100" class="index-head">Therapist</th>
+                        <th width:"100" class="index-head">Creation Date</th>
                     </tr>
                     <tbody>
                         <% @enrollments.each do |e| %>
 
                         <tr>
-                          <td width:"100"><%= link_to e.therapist_name + " " + e.date, enrollment_path(e.id)%></td>
-
-
+                          <td width:"100"><%= link_to e.therapist_name, enrollment_path(e.id)%></td>
+                          <td width:"100"><%= link_to e.date, enrollment_path(e.id)%></td>
                         </tr>
                         <% end %>
                     </tbody>
                 </table>
             </hr>
-            <%= link_to "New Enrollment", new_enrollment_path, class: "button_success" %>
+            <%= link_to "New Enrollment", new_enrollment_path, class: "button success" %>
 
         </div>
     </div>

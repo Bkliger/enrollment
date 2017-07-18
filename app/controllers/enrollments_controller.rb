@@ -4,7 +4,7 @@ class EnrollmentsController < ApplicationController
   end
 
   def new
-    @enrollment = Enrollment.create(date: Time.now.strftime("%d/%m/%Y"))
+    @enrollment = Enrollment.create(date: Time.now.strftime("%m/%d/%Y"))
     @students = Student.all
     @students.each do |s|
         EnrollmentStudent.create(enrollment_id: @enrollment.id, first_name: s.first_name, last_name: s.last_name, student_num: s.student_num)
@@ -16,6 +16,13 @@ class EnrollmentsController < ApplicationController
       @enrollment = Enrollment.find(params[:enrollment_id])
       @enrollment_students = EnrollmentStudent.where( enrollment_id: @enrollment.id)
 
+    end
+
+    def destroy
+        @enrollment = Enrollment.find(params[:enrollment_id])
+        EnrollmentStudent.where(enrollment_id: @enrollment.id).delete_all
+        @enrollment.delete
+        redirect_to enrollments_path
     end
 
 

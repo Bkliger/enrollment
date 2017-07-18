@@ -57,6 +57,12 @@
 	display: inline;
 }
 
+.index-head{
+  color: $blue;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .body{
 	background:$white;
 }
@@ -115,14 +121,18 @@ label {
 }
 
 .button.success {
-    background: $green;
+    background: $blue;
     color: $white;
+    font-size: 20px;
 }
 
+.button.success:hover {
+    background: $red;
+    color: $white;
+}
 a.button.success {
     color: $white;
-    font-weight: bold;
-    font-size: 26px;
+    font-size: 20px;
 }
 
 .footer {
