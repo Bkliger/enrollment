@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "enrollments#index"
   get "enrollments", to: "enrollments#index", as: "enrollments"
   get "/enrollments/new", to: "enrollments#new", as: "new_enrollment"
   post "/enrollments", to: "enrollments#create"
